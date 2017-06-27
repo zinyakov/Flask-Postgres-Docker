@@ -2,10 +2,17 @@
 
 {% block content %}
 
-<div>
-  {% for post in posts %}
-    <h4 class="well"><strong>{{post.text}}</strong> - <em>{{post.date_posted.strftime('%Y-%m-%d')}}</em></h4>
-  {% endfor %}
+<div class="card-deck">
+	{% for post in posts %}
+	<div class="card">
+		<img class="card-img-top" src="..." alt="Card image cap">
+		<div class="card-block">
+			<h4 class="card-title">Card title</h4>
+			<p class="card-text">{{post.text}}</p>
+			<p class="card-text"><small class="text-muted">{{post.date_posted.strftime('%Y-%m-%d')}}</small></p>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 {% endblock %}
