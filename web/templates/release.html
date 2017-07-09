@@ -1,0 +1,45 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="row">
+	<div class="col-12 col-md-4 push-md-8 bd-sidebar">
+		<h2>{{release.title}}</h2>
+		<p>by {{release.artist_name}}</p>
+		<p>{{release.label_name}}, {{release.country}}</p>
+		<p>{{release.tags}}</p>
+		<p><a href="https://www.discogs.com/release/{{release.id}}">💽 Release info on Discogs</a></p>
+		<div id="share-buttons">
+    <!-- Email -->
+    <a href="mailto:?Subject=Found on Lostelectro&amp;Body=http://lostelectro.com/release/{{release.id}}">
+        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+    </a>
+    <!-- Facebook -->
+    <a href="http://www.facebook.com/sharer.php?u=http://lostelectro.com/release/{{release.id}}" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+    </a>
+    <!-- Reddit -->
+    <a href="http://reddit.com/submit?url=http://lostelectro.com/release/{{release.id}}&amp;title={{release.title}}" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+    </a>
+    <!-- Twitter -->
+    <a href="https://twitter.com/share?url=http://lostelectro.com/release/{{release.id}}&amp;text={{release.title}}&amp;hashtags=lostelectro" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+    </a>
+    <!-- VK -->
+    <a href="http://vkontakte.ru/share.php?url=http://lostelectro.com/release/{{release.id}}" target="_blank">
+        <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+    </a>
+</div>
+	</div>
+	<div class="col-12 col-md-8 pull-md-4 bd-content embed">
+		<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/videoseries?list={{release.youtube_playlist_id}}" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
+<div class="row more-section">
+	<div class="col-12 col-md-12">
+		<h3>Later there will be suggestions!</h3>
+	</div>
+</div>
+
+{% endblock %}
